@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="praXvalue - Applied AI for high-stakes decision environments. Decision intelligence through eigenmind platform.">
+    <meta name="keywords" content="AI, decision intelligence, eigenmind, optimization, risk modeling, defense, finance">
+    <meta name="author" content="praXvalue">
+    <title>praXvalue | Decision Intelligence for High-Stakes Environments</title>
+    
+    <style>
+        /* === CSS Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #5B4B9D; /* PxV Purple */
+            --secondary-color: #000000; /* eigenmind Black */
+            --text-dark: #1a1a1a;
+            --text-light: #4a4a4a;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --accent: #6C5CE7;
+            --border-color: #e0e0e0;
+            --max-width: 1200px;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+            overflow-x: hidden;
+        }
+        
+        /* === Typography === */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-dark);
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-top: var(--spacing-md);
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        /* === Layout Container === */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        /* === Header === */
+        header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            padding: var(--spacing-md) 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.02em;
+        }
+        
+        .logo-divider {
+            width: 2px;
+            height: 30px;
+            background: var(--border-color);
+        }
+        
+        .eigenmind-logo {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--secondary-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        nav {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            text-decoration: none;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* === Hero Section === */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto var(--spacing-md);
+            font-weight: 300;
+        }
+        
+        /* === Section Styles === */
+        section {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        section:nth-child(even) {
+            background: var(--bg-light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            padding-bottom: var(--spacing-sm);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        /* === Introduction Section === */
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .intro-content p {
+            font-size: 1.15rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .principle-card {
+            background: var(--bg-white);
+            padding: var(--spacing-md);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .principle-card h3 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        /* === Technology Section === */
+        .tech-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        
+        .eigenmind-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            padding: var(--spacing-lg);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+        
+        .eigenmind-header {
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .eigenmind-title {
+            font-family: 'Courier New', monospace;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: 0.05em;
+        }
+        
+        .eigenmind-subtitle {
+            color: var(--text-light);
+            font-size: 1.25rem;
+            font-style: italic;
+        }
+        
+        .eigenmind-description {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-light);
+        }
+        
+        .tech-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .feature-box {
+            background: var(--bg-light);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .feature-box h4 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+        
+        .feature-box p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        /* === People Section === */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .person-card {
+            background: var(--bg-white);
+            padding: var(--spacing-lg);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .person-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .person-name {
+            font-size: 1.75rem;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .person-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: var(--spacing-sm);
+        }
+        
+        .person-link:hover {
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+        
+        /* === Partners Section === */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .partner-card {
+            background: var(--bg-white);
+            padding: var(--spacing-lg);
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .partner-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 20px rgba(91, 75, 157, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .partner-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .partner-link {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: 500;
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-link:hover {
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* === Thinking Section === */
+        .thinking-section {
+            background: linear-gradient(135deg, #5B4B9D 0%, #6C5CE7 100%);
+            color: white;
+        }
+        
+        .thinking-section .section-title {
+            color: white;
+        }
+        
+        .thinking-section .section-title::after {
+            background: white;
+        }
+        
+        .article-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: var(--spacing-lg);
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .article-title {
+            font-size: 1.75rem;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .article-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            background: var(--primary-color);
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .article-link:hover {
+            background: var(--accent);
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+        
+        /* === Footer === */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .footer-logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .footer-text {
+            color: #adb5bd;
+            margin: var(--spacing-sm) 0;
+        }
+        
+        /* === Responsive Design === */
+        @media (max-width: 768px) {
+            :root {
+                --spacing-xl: 3rem;
+                --spacing-lg: 2rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
+            .logo-divider {
+                width: 60px;
+                height: 2px;
+            }
+            
+            nav {
+                justify-content: center;
+            }
+            
+            .hero-tagline {
+                font-size: 1.25rem;
+            }
+            
+            .principles,
+            .tech-features,
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+            
+            .container {
+                padding: 0 var(--spacing-sm);
+            }
+            
+            header {
+                padding: var(--spacing-sm) 0;
+            }
+        }
+        
+        /* === Accessibility === */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* === Print Styles === */
+        @media print {
+            header {
+                position: static;
+            }
+            
+            .hero {
+                background: white;
+                padding: var(--spacing-md) 0;
+            }
+            
+            section {
+                page-break-inside: avoid;
+            }
+            
+            a {
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo">PxV</div>
+                    <div class="logo-divider"></div>
+                    <div class="eigenmind-logo">eigenmind</div>
+                </div>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#technology">Technology</a>
+                    <a href="#people">People</a>
+                    <a href="#partners">Partners</a>
+                    <a href="#thinking">Thinking</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>praXvalue</h1>
+            <p class="hero-tagline">Applied AI for High-Stakes Decision Environments</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Who We Are</h2>
+            <div class="intro-content">
+                <p><strong>praXvalue</strong> is an applied-AI firm purpose-built to bring local and frugal intelligence into high-stakes decision environments. We believe we are still at the very beginning of transforming advanced mathematical and AI capabilities into reliable, real-world decision systems.</p>
+                
+                <p>We partner with institutions that require clarity under uncertainty—from defence to finance to complex industrial systems.</p>
+                
+                <p>We engage early, often before a problem is fully formalised, and help design solutions grounded in decades of research in optimisation, learning, and risk.</p>
+                
+                <p>We have the courage of our principles: precision, transparency, and engineering discipline.</p>
+                
+                <p>We bring a deep and long-standing network of technical leaders, researchers, and institutional decision-makers. We are hands-on, domain-literate, and committed to building systems that are robust rather than speculative. We like to work with people who value rigour, curiosity, and purposeful speed.</p>
+                
+                <p><strong>Our goal is simple:</strong> to help our partners turn complexity into actionable intelligence and build the most resilient version of themselves.</p>
+                
+                <div class="principles">
+                    <div class="principle-card">
+                        <h3>Precision</h3>
+                        <p>Grounded in decades of mathematical and AI research for reliable decision systems.</p>
+                    </div>
+                    <div class="principle-card">
+                        <h3>Transparency</h3>
+                        <p>Clear, traceable decision frameworks that maintain full accountability.</p>
+                    </div>
+                    <div class="principle-card">
+                        <h3>Engineering Discipline</h3>
+                        <p>Robust systems built for real-world, high-stakes execution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="tech-section">
+        <div class="container">
+            <h2 class="section-title">Technology</h2>
+            
+            <div class="eigenmind-container">
+                <div class="eigenmind-header">
+                    <h3 class="eigenmind-title">eigenmind</h3>
+                    <p class="eigenmind-subtitle">Decision-Intelligence Engine for High-Stakes Environments</p>
+                </div>
+                
+                <p class="eigenmind-description">
+                    <strong>eigenmind</strong> is a decision-intelligence engine designed to capture, structure, and operationalise expert knowledge in environments where data is scarce, uncertain, or fragmented. Built on three decades of research in optimisation, AI, and risk modelling, eigenmind transforms tacit human expertise into reusable decision frameworks while remaining fully air-gapped and computationally frugal.
+                </p>
+                
+                <p class="eigenmind-description">
+                    Its core relies on eigenvalue-based optimisation across semantic graphs—an approach inspired by the German mathematical terms <em>eigenwert</em> and <em>eigenvektor</em>, hybrid loanwords introduced into English by scientists such as Schrödinger and von Neumann. These <em>eigen</em> concepts reveal the intrinsic structure hidden within complexity, and eigenmind extends this scientific legacy to human intelligence: blending structured judgement, weak-signal detection, and robust analytical models to support real-world decisions in defence, finance, and other mission-critical domains.
+                </p>
+                
+                <p class="eigenmind-description">
+                    <strong>eigenmind is an intelligence architecture engineered for reliability, traceability, and high-stakes execution.</strong>
+                </p>
+                
+                <div class="tech-features">
+                    <div class="feature-box">
+                        <h4>Expert Knowledge Capture</h4>
+                        <p>Transforms tacit expertise into structured, reusable decision frameworks</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Air-Gapped Security</h4>
+                        <p>Fully isolated and computationally frugal for sensitive environments</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Eigenvalue Optimization</h4>
+                        <p>Reveals intrinsic structure hidden within complex systems</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Mission-Critical Ready</h4>
+                        <p>Built for defence, finance, and high-stakes decision domains</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- People Section -->
+    <section id="people">
+        <div class="container">
+            <h2 class="section-title">People</h2>
+            <div class="people-grid">
+                <div class="person-card">
+                    <h3 class="person-name">François Oustry</h3>
+                    <a href="https://www.linkedin.com/in/francois-oustry/" target="_blank" rel="noopener noreferrer" class="person-link">
+                        View LinkedIn Profile →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Partners Section -->
+    <section id="partners">
+        <div class="container">
+            <h2 class="section-title">Strategic Partners</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <h3 class="partner-name">Orson.ia</h3>
+                    <a href="https://orson.ai/" target="_blank" rel="noopener noreferrer" class="partner-link">
+                        Visit Website →
+                    </a>
+                </div>
+                <div class="partner-card">
+                    <h3 class="partner-name">Indefi</h3>
+                    <a href="https://www.indefi.fr/" target="_blank" rel="noopener noreferrer" class="partner-link">
+                        Visit Website →
+                    </a>
+                </div>
+                <div class="partner-card">
+                    <h3 class="partner-name">Raise Partner</h3>
+                    <a href="https://www.raisepartner.com/" target="_blank" rel="noopener noreferrer" class="partner-link">
+                        Visit Website →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thinking Section -->
+    <section id="thinking" class="thinking-section">
+        <div class="container">
+            <h2 class="section-title">Thinking</h2>
+            <div class="article-card">
+                <h3 class="article-title">Focal points and the power of implicit shared salience</h3>
+                <a href="https://foustry.blogspot.com/2024/08/focal-points-and-power-of-implicit.html" target="_blank" rel="noopener noreferrer" class="article-link">
+                    Read Article →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">praXvalue</div>
+            <p class="footer-text">Applied AI for High-Stakes Decision Environments</p>
+            <p class="footer-text">&copy; 2025 praXvalue. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
