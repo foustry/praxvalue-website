@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mentions légales de praXvalue - Informations légales obligatoires">
+    <title>Mentions Légales | praXvalue</title>
+    
+    <style>
+        /* === CSS Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #5B4B9D;
+            --text-dark: #1a1a1a;
+            --text-light: #4a4a4a;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --max-width: 800px;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+        }
+        
+        html {
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+        }
+        
+        /* === Typography === */
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-dark);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-top: var(--spacing-md);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            margin-top: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+        
+        p, li {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        /* === Layout === */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+        
+        header {
+            background: var(--bg-light);
+            padding: var(--spacing-md) 0;
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        
+        main {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .legal-section {
+            background: var(--bg-white);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .highlight-box {
+            background: var(--bg-light);
+            padding: var(--spacing-md);
+            border-left: 4px solid var(--primary-color);
+            margin: var(--spacing-md) 0;
+            border-radius: 4px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-sm) 0;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .info-value {
+            color: var(--text-light);
+        }
+        
+        .placeholder {
+            background: #fff3cd;
+            color: #856404;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+        
+        /* === Responsive Design === */
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+            
+            .container {
+                padding: var(--spacing-sm);
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+        
+        /* === Print Styles === */
+        @media print {
+            .back-link {
+                display: none;
+            }
+            
+            .legal-section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="back-link">
+                ← Retour au site principal
+            </a>
+            <h1>Mentions Légales</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <p><strong>Note importante :</strong> Cette page contient les informations légales obligatoires conformément au droit français et européen. Ces informations sont mises à jour régulièrement.</p>
+            </div>
+
+            <section class="legal-section">
+                <h2>1. Identification de l'Entreprise</h2>
+                
+                <div class="info-grid">
+                    <div class="info-label">Dénomination sociale :</div>
+                    <div class="info-value"><strong>PRAX VALUE</strong></div>
+                    
+                    <div class="info-label">Forme juridique :</div>
+                    <div class="info-value"><span class="placeholder">EURL</span></div>
+                    
+                    <div class="info-label">Siège social :</div>
+                    <div class="info-value">
+                        <span class="placeholder">14 boulevard Edouard Rey</span><br>
+                        <span class="placeholder">38000 Grenoble</span><br>
+                        France
+                    </div>
+                    
+                    <div class="info-label">Numéro SIRET :</div>
+                    <div class="info-value"><span class="placeholder">488 380 080 00025</span></div>
+                    
+                    <div class="info-label">Code APE/NAF :</div>
+                    <div class="info-value"><span class="placeholder">7022Z</span></div>
+                    
+                    <div class="info-label">Capital social :</div>
+                    <div class="info-value"><span class="placeholder">635 000,00 €</span></div>
+                    
+                    <div class="info-label">Numéro TVA intracommunautaire :</div>
+                    <div class="info-value"><span class="placeholder">FR66488380080</span></div>
+                </div>
+            </section>
+
+            <section class="legal-section">
+                <h2>2. Direction et Publication</h2>
+                
+                <div class="info-grid">
+                    <div class="info-label">Directeur de la publication :</div>
+                    <div class="info-value"><strong>Dr. François Oustry</strong></div>
+                    
+                    <div class="info-label">Représentant légal :</div>
+                    <div class="info-value"><strong>Dr. François Oustry</strong></div>
+                    
+                    <div class="info-label">Qualité :</div>
+                    <div class="info-value"><span class="placeholder">Gérant</span></div>
+                </div>
+            </section>
+
+            <section class="legal-section">
+                <h2>3. Contact</h2>
+                
+                <div class="info-grid">
+                    <div class="info-label">Site internet :</div>
+                    <div class="info-value">
+                        <a href="https://praxvalue.io" target="_blank">https://praxvalue.io</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="legal-section">
+                <h2>4. Hébergement du Site</h2>
+                
+                <div class="info-grid">
+                    <div class="info-label">Hébergeur :</div>
+                    <div class="info-value"><strong>GitHub Pages</strong></div>
+                    
+                    <div class="info-label">Société :</div>
+                    <div class="info-value">GitHub, Inc.</div>
+                    
+                    <div class="info-label">Adresse :</div>
+                    <div class="info-value">
+                        88 Colin P Kelly Jr St<br>
+                        San Francisco, CA 94107<br>
+                        États-Unis
+                    </div>
+                    
+                    <div class="info-label">Site web :</div>
+                    <div class="info-value">
+                        <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">https://pages.github.com</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="legal-section">
+                <h2>5. Propriété Intellectuelle</h2>
+                
+                <p>Le site internet <strong>praxvalue.io</strong> et l'ensemble de son contenu (textes, images, vidéos, logos, etc.) sont protégés par les dispositions du Code de la propriété intellectuelle et notamment par le droit d'auteur.</p>
+                
+                <p>La marque <strong>"praXvalue"</strong> et le nom <strong>"eigenmind"</strong> sont des marques déposées ou en cours de dépôt de praXvalue.</p>
+                
+                <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de praXvalue.</p>
+                
+                <p>Toute exploitation non autorisée du site ou de l'un quelconque des éléments qu'il contient sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.</p>
+            </section>
+
+            <section class="legal-section">
+                <h2>6. Responsabilité</h2>
+                
+                <h3>6.1 Contenu du site</h3>
+                <p>praXvalue s'efforce de fournir sur le site <strong>praxvalue.io</strong> des informations aussi précises que possible. Toutefois, elle ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu'elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.</p>
+                
+                <h3>6.2 Services de conseil</h3>
+                <p>Les informations présentes sur ce site sont fournies à titre informatif uniquement. Elles ne constituent pas des conseils juridiques, financiers ou d'investissement spécifiques. Toute décision prise sur la base de ces informations relève de la seule responsabilité du visiteur.</p>
+                
+                <h3>6.3 Liens externes</h3>
+                <p>Le site peut contenir des liens vers d'autres sites internet. praXvalue ne saurait être responsable du contenu de ces sites externes.</p>
+            </section>
+
+            <section class="legal-section">
+                <h2>7. Données Personnelles et Cookies</h2>
+                
+                <div class="success-box">
+                    <p><strong>✓ Respect de la vie privée</strong></p>
+                    <p>Ce site web est conçu dans le respect de votre vie privée :</p>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                        <li><strong>Aucun cookie</strong> n'est déposé sur votre appareil</li>
+                        <li><strong>Aucune donnée personnelle</strong> n'est collectée activement par praXvalue</li>
+                        <li><strong>Aucun outil de tracking</strong> ou d'analyse comportementale</li>
+                        <li><strong>Aucun formulaire de contact</strong> collectant vos informations</li>
+                    </ul>
+                </div>
+                
+                <h3>7.1 Absence de collecte active</h3>
+                <p>Le site <strong>praxvalue.io</strong> est un site vitrine statique qui ne collecte aucune donnée personnelle de manière active. Il n'utilise :</p>
+                <ul>
+                    <li>Aucun formulaire de contact</li>
+                    <li>Aucun système d'inscription</li>
+                    <li>Aucun outil de suivi ou d'analyse (Google Analytics, etc.)</li>
+                    <li>Aucun cookie publicitaire ou de ciblage</li>
+                    <li>Aucun réseau social intégré collectant des données</li>
+                </ul>
+                
+                <h3>7.2 Données collectées par l'hébergeur</h3>
+                <p>Bien que praXvalue ne collecte aucune donnée, l'hébergeur <strong>GitHub Pages</strong> peut automatiquement enregistrer certaines informations techniques dans ses journaux de serveur (logs), conformément à ses propres politiques :</p>
+                <ul>
+                    <li>Adresse IP de connexion</li>
+                    <li>Type de navigateur et système d'exploitation</li>
+                    <li>Date et heure de la visite</li>
+                    <li>Pages consultées</li>
+                </ul>
+                
+                <p>Ces données sont collectées et traitées par <strong>GitHub, Inc.</strong> (États-Unis) conformément à leur politique de confidentialité disponible sur : <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a></p>
+                
+                <p>praXvalue n'a <strong>aucun accès</strong> à ces données et ne les utilise en aucune façon.</p>
+                
+                <h3>7.3 Vos droits</h3>
+                <p>Dans la mesure où praXvalue ne collecte aucune donnée personnelle, les droits RGPD (accès, rectification, effacement, etc.) ne s'appliquent pas directement vis-à-vis de praXvalue.</p>
+            </section>
+                <h2>8. Droit Applicable et Juridiction</h2>
+                
+                <p>Les présentes mentions légales sont régies par le droit français.</p>
+                
+                <p>En cas de litige, et après recherche d'une solution amiable, les tribunaux français seront seuls compétents pour connaître de ce litige.</p>
+                
+                <div class="info-grid">
+                    <div class="info-label">Juridiction compétente :</div>
+                    <div class="info-value"><span class="placeholder">Tribunal de commerce de Grenoble</span></div>
+                </div>
+            </section>
+
+            <section class="legal-section">
+                <h2>9. Activité Professionnelle</h2>
+                
+                <h3>9.1 Activité</h3>
+                <p>praXvalue exerce une activité de <strong>conseil en stratégie, information, transformation digitiale et intelligence décisionnelle</strong> spécialisée dans les domaines de l'IA.</p>
+                
+                <h3>9.2 Assurance Professionnelle</h3>
+                <div class="info-grid">
+                    <div class="info-label">Assureur :</div>
+                    <div class="info-value"><span class="placeholder">Hiscox Assurances</span></div>
+                    
+                    <div class="info-label">Police n° :</div>
+                    <div class="info-value"><span class="placeholder">HSXIN320070126A</span></div>
+                    
+                    <div class="info-label">Couverture géographique :</div>
+                    <div class="info-value">Mondes hors USA/CANADA</div>
+                </div>
+                
+            </section>
+
+            <div class="highlight-box">
+                <p><strong>Dernière mise à jour :</strong> <span class="placeholder">14/11/2025</span></p>
+                <p><strong>Version :</strong> 1.0</p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background: #f8f9fa; padding: 2rem 0; border-top: 1px solid #e0e0e0; text-align: center; color: #6c757d;">
+        <div class="container">
+            <p>&copy; 2025 praXvalue. Tous droits réservés.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="index.html">Accueil</a> | 
+                <a href="legal-notice.html">Mentions Légales</a> | 
+            </p>
+        </div>
+    </footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
